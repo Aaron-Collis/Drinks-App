@@ -10,7 +10,7 @@ line = ""
 people = []
 drinks_order = []
 number_of_people = "x"
-welcome.add_row("WELCOME TO VSCafe")
+welcome.add_row("WELCOME TO VS Twig")
 headings_menu = ['index','Drinks', 'Cost']                          #LOAD THIS FROM FILE
 menu_idx = ['1', '2', '3', '4', '5']                                #
 drinks_list = ['Water', 'Tea', 'Coffe', 'Hot Chocolate', 'G&T']     #
