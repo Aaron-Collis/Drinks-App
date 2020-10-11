@@ -1,0 +1,10 @@
+.vscode
+.env
+.Week 3
+# venv
+.venv
+
+# python
+__pycache__
+
+.pytest_cache
