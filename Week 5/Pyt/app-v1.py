@@ -1,5 +1,6 @@
 import sys
 import time
+import pymysql
 #import csv
 
 people = ['Aaron', 'Kate', 'Santa']
@@ -17,7 +18,7 @@ drinks_list = {
     6: 'G&T'
 }
 
-MAIN_MENU = ['Get People', 'Add People', 'Get Prefrences', 'Ammend Prefrences', 'Get Drinks', 'Add Drinks', 'Make a Round']
+MAIN_MENU = ['Get People', 'Add People', 'Get Prefrences', 'Ammend Prefrences', 'Get Drinks', 'Add Drinks']
 
 def print_table(Header, Content):
     print("\n     " + Header.upper() + "\n")
@@ -43,7 +44,7 @@ def print_menu():
     if user_choice == 2: #Add People
         name = input("Please type the name of the person you wish to add: ")
         people.append(name)
-        drinks_prefrence[name] = 0
+        drinks_prefrence[name] = 1
         print_menu()
 
     if user_choice == 3: #Get Prefrences #TODO Try/Catch after adding new person
@@ -59,7 +60,7 @@ def print_menu():
         name = input("\n Please type the name of the person you would you like to ammend prefrences for: ")
         if name in people:
             print_table('Drinks', drinks_list.values())
-            pref = int(input(f"Which drink number would {name} like to change their prefrence to: "))
+            pref = int(input(f"\nWhich drink number would {name} like to change their prefrence to: "))
             if pref in drinks_list.keys():
                 drinks_prefrence[name] = pref
                 print("Prefrences Ammened :)")
@@ -80,9 +81,9 @@ def print_menu():
         drinks_list[len(drinks_list.keys()) + 1] = input("\n Please enter name of drink to be added: ")
         print_menu()
 
-    if user_choice == 7: #Make a round
-        print(MAIN_MENU[user_choice - 1] + ' STUFF HAPPENS')     #TODO Make stuff happen   
-        print_menu()     
+    #if user_choice == 7: #Make a round
+    #    print(MAIN_MENU[user_choice - 1] + ' STUFF HAPPENS')     #TODO Make stuff happen   
+    #    print_menu()     
 
 ### EXIT FUNCTION TO REMAIN LAST IF STATEMENT ####
     if user_choice == i:
@@ -90,12 +91,3 @@ def print_menu():
         exit()
 
 print_menu()
-
-###########################     GET PEOPLE     ##############################
-
-
-
-
-
-
-
