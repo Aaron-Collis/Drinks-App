@@ -18,7 +18,7 @@ drinks_list = {
     6: 'G&T'
 }
 
-MAIN_MENU = ['Get People', 'Add People', 'Get Prefrences', 'Ammend Prefrences', 'Get Drinks', 'Add Drinks']
+MAIN_MENU = ['Get People', 'Add People', 'Get Prefrences', 'Amend Prefrences', 'Get Drinks', 'Add Drinks']
 
 def print_table(Header, Content):
     print("\n     " + Header.upper() + "\n")
@@ -57,13 +57,13 @@ def print_menu():
     if user_choice == 4: #Ammend Prefrences
         print("\n")
         print_table('People',people)
-        name = input("\n Please type the name of the person you would you like to ammend prefrences for: ")
+        name = input("\n Please type the name of the person you would you like to amend prefrences for: ")
         if name in people:
             print_table('Drinks', drinks_list.values())
             pref = int(input(f"\nWhich drink number would {name} like to change their prefrence to: "))
             if pref in drinks_list.keys():
                 drinks_prefrence[name] = pref
-                print("Prefrences Ammened :)")
+                print("Prefrences Amended :)")
             else:
                 print("\n Sorry that drink ID does not exisit in the database")
                 print_menu()
